@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - uses: nuget/setup-nuget@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore UIDtoKeyboard.sln
+
+      - name: Build (Release)
+        run: msbuild UIDtoKeyboard.sln /p:Configuration=Release /m /verbosity:minimal
+
+      - name: Upload program
+        uses: actions/upload-artifact@v4
+        with:
+          name: UIDtoKeyboard
+          path: |
+            UIDtoKeyboard/bin/Release/*.exe
+            UIDtoKeyboard/bin/Release/*.dll
+            UIDtoKeyboard/bin/Release/*.config

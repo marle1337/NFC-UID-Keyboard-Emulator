@@ -8,6 +8,7 @@ Public Class AppSettings
     Private _isRunAtStartupEnabled As Boolean = False
     Private _isMinimizeToTrayEnabled As Boolean = False
     Private _isSendEnterEnabled As Boolean = True
+    Private _pinnedReaderName As String = ""
 
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 
@@ -67,6 +68,20 @@ Public Class AppSettings
             If _isSendEnterEnabled <> value Then
                 _isSendEnterEnabled = value
                 RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(IsSendEnterEnabled)))
+            End If
+        End Set
+    End Property
+
+    ' Name of the pinned RFID reader. Empty = no reader pinned.
+    Public Property PinnedReaderName As String
+        Get
+            Return _pinnedReaderName
+        End Get
+        Set(value As String)
+            If value Is Nothing Then value = ""
+            If _pinnedReaderName <> value Then
+                _pinnedReaderName = value
+                RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(PinnedReaderName)))
             End If
         End Set
     End Property

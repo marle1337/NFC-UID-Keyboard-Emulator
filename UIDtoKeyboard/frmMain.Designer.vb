@@ -27,6 +27,8 @@ Partial Class frmMain
         Me.cbxReaderList = New System.Windows.Forms.ComboBox()
         Me.btnRefreshReader = New System.Windows.Forms.Button()
         Me.btnStartMonitor = New System.Windows.Forms.Button()
+        Me.chkPinReader = New System.Windows.Forms.CheckBox()
+        Me.lblStatus = New System.Windows.Forms.Label()
         Me.txtInputSpace = New System.Windows.Forms.TextBox()
         Me.lblReadingMode = New System.Windows.Forms.Label()
         Me.rbOriginal = New System.Windows.Forms.RadioButton()
@@ -89,10 +91,10 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtInputSpace.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtInputSpace.Location = New System.Drawing.Point(12, 176)
+        Me.txtInputSpace.Location = New System.Drawing.Point(12, 192)
         Me.txtInputSpace.Multiline = True
         Me.txtInputSpace.Name = "txtInputSpace"
-        Me.txtInputSpace.Size = New System.Drawing.Size(445, 166)
+        Me.txtInputSpace.Size = New System.Drawing.Size(445, 150)
         Me.txtInputSpace.TabIndex = 7
         '
         'lblReadingMode
@@ -139,6 +141,29 @@ Partial Class frmMain
         Me.chkSendEnter.TabIndex = 5
         Me.chkSendEnter.Text = "Send Enter"
         Me.chkSendEnter.UseVisualStyleBackColor = True
+        '
+        'chkPinReader
+        '
+        Me.chkPinReader.AutoSize = True
+        Me.chkPinReader.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.chkPinReader.Location = New System.Drawing.Point(130, 99)
+        Me.chkPinReader.Name = "chkPinReader"
+        Me.chkPinReader.Size = New System.Drawing.Size(290, 22)
+        Me.chkPinReader.TabIndex = 14
+        Me.chkPinReader.Text = "Pin reader (auto-reconnect)"
+        Me.chkPinReader.UseVisualStyleBackColor = True
+        '
+        'lblStatus
+        '
+        Me.lblStatus.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblStatus.AutoEllipsis = True
+        Me.lblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.lblStatus.Location = New System.Drawing.Point(12, 166)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(445, 18)
+        Me.lblStatus.TabIndex = 15
+        Me.lblStatus.Text = "Status:"
         '
         'TableLayoutPanel1
         '
@@ -236,6 +261,8 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(469, 354)
+        Me.Controls.Add(Me.lblStatus)
+        Me.Controls.Add(Me.chkPinReader)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.chkSendEnter)
         Me.Controls.Add(Me.rbReversed)
@@ -266,6 +293,8 @@ Partial Class frmMain
     Friend WithEvents rbOriginal As RadioButton
     Friend WithEvents rbReversed As RadioButton
     Friend WithEvents chkSendEnter As CheckBox
+    Friend WithEvents chkPinReader As CheckBox
+    Friend WithEvents lblStatus As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem

@@ -21,6 +21,13 @@ The configuration is very simple. Simply plug in the PC/SC compatible reader. La
 
 To test the software, open notepad or program you wish to test with, put the card on the reader and the software should type in the card UID right away. 
 
+## Pinning a reader / auto-reconnect
+Tick **Pin reader (auto-reconnect)** to pin the selected reader. The pinned reader is saved in `appsettings.json` and:
+- is selected and monitored automatically when the program starts (even if it is not plugged in yet),
+- is re-attached automatically if the connection is lost (reader unplugged, USB hub reset, PC/SC service restarted, sleep/resume). The program checks every 2 seconds.
+
+If Windows gives the reader a new index when it comes back (e.g. `ACS ACR122 0` becomes `ACS ACR122 1`), the reader is still found by its name without the index. The current state is shown in the status line and in the tray icon tooltip. Untick the box to unpin.
+
 ## Version
 - (Release 1) Version 1.0.0 : Initial Release  
 - (Release 2) Version 1.1.0 : Add support for reading 7 Byte UID Card (i.e. Mifare Ultralight, Mifare DESfire)
