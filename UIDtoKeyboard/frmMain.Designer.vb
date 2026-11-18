@@ -37,6 +37,7 @@ Partial Class frmMain
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MinimizeToTrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutostartMonitorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -184,7 +185,7 @@ Partial Class frmMain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(469, 24)
@@ -197,6 +198,12 @@ Partial Class frmMain
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
         Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.OptionsToolStripMenuItem.Text = "Options"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'StartupToolStripMenuItem
         '
@@ -275,7 +282,7 @@ Partial Class frmMain
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MinimumSize = New System.Drawing.Size(333, 304)
         Me.Name = "frmMain"
-        Me.Text = "RFID/NFC UID Keyboard Emulator"
+        Me.Text = "RFID/NFC UID Keyboard Emulator – eero"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -298,6 +305,7 @@ Partial Class frmMain
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StartupToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MinimizeToTrayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NotifyIcon1 As NotifyIcon

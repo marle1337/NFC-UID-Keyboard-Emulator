@@ -28,3 +28,4 @@ jobs:
             UIDtoKeyboard/bin/Release/*.exe
             UIDtoKeyboard/bin/Release/*.dll
             UIDtoKeyboard/bin/Release/*.config
+            LICENSE

@@ -157,6 +157,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SettingsManager.vb" />
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ShortcutManager.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +189,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\eero_logo_white.png" />
     <EmbeddedResource Include="Dependencies\PCSC.dll" />
     <EmbeddedResource Include="Dependencies\PCSC.Iso7816.dll" />
   </ItemGroup>

@@ -494,6 +494,12 @@ Public Class frmMain
         _settingsManager.Settings.IsSendEnterEnabled = chkSendEnter.Checked
     End Sub
 
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Using about As New frmAbout()
+            about.ShowDialog(Me)
+        End Using
+    End Sub
+
     Private Sub AutostartMonitorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AutostartMonitorToolStripMenuItem.Click
         AutostartMonitorToolStripMenuItem.Checked = Not AutostartMonitorToolStripMenuItem.Checked
         _settingsManager.Settings.IsAutoStartMonitorEnabled = AutostartMonitorToolStripMenuItem.Checked
