@@ -1,4 +1,4 @@
-﻿﻿Imports System.IO
+﻿Imports System.IO
 Imports System.Text.RegularExpressions
 Imports PCSC
 Imports PCSC.Iso7816
